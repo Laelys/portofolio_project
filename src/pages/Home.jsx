@@ -7,12 +7,19 @@ const Home = () => {
     <>
       <Navbar />
       <div className="carousel__container">
-        <div className="container__text">
+        <div className="carousel__text">
           <h2>Your best value proposition.</h2>
           <p>Insert your paragraph here.</p>
           <button>Click me!</button>
         </div>
         <Carousel />
+      </div>
+      <div className="quote__container">
+        <p className="quote__text">Add a quote here</p>
+        <div className="quote__portrait">
+          <img src="" alt="Portrait" />
+        </div>
+        <p className="quote__author">Authors name, ocupation</p>
       </div>
     </>
   );

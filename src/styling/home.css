@@ -1,16 +1,15 @@
 .carousel__container {
+  background-color: bisque;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
   height: 700px;
-  margin: 0 auto;
   padding: 0 135px;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
-.container__text {
+.carousel__text {
   flex: 0 0 422px;
   height: 357px;
   display: flex;
@@ -21,7 +20,39 @@
 .carousel {
   flex: 0 0 670px;
   height: 480px;
-  position: relative;
   margin-left: 78px;
-  box-sizing: border-box;
+  margin-right: 135px;
+}
+
+.quote__container {
+  background-color: rgb(212, 158, 77);
+  max-width: 1440px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote__text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quote__portrait {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.quote__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote__author {
+  text-align: center;
 }

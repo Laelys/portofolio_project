@@ -3,11 +3,12 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
+  width: 100vw;
   height: 64px;
   background-color: #193d61;
   padding: 0px;
   margin: 0 auto;
-  position: relative;
+  box-sizing: border-box;
 }
 
 .navbar__links {
