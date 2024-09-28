@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
+import Projects from "../components/Projects";
 import "../styling/home.css";
 import quoteImage from "../assets/quote-image/portrait.png";
 
@@ -22,6 +23,7 @@ const Home = () => {
         </div>
         <p className="quote__author">Authors name, ocupation</p>
       </div>
+      <Projects />
     </>
   );
 };
