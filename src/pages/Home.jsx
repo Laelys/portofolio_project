@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 import "../styling/home.css";
+import quoteImage from "../assets/quote-image/portrait.png";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
       <div className="quote__container">
         <p className="quote__text">Add a quote here</p>
         <div className="quote__portrait">
-          <img src="" alt="Portrait" />
+          <img src={quoteImage} alt="Portrait" />
         </div>
         <p className="quote__author">Authors name, ocupation</p>
       </div>
