@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 0 135px;
   box-sizing: border-box;
-  background-color: aquamarine;
+  overflow: hidden;
 }
 
 .container__text {
@@ -16,11 +16,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
 }
 
 .carousel {
   flex: 0 0 670px;
   height: 480px;
+  position: relative;
   margin-left: 78px;
+  box-sizing: border-box;
 }
