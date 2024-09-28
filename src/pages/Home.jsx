@@ -3,6 +3,7 @@ import Carousel from "../components/Carousel";
 import Projects from "../components/Projects";
 import "../styling/home.css";
 import quoteImage from "../assets/quote-image/portrait.png";
+import AboutMe from "../components/AboutMe";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <p className="quote__author">Authors name, ocupation</p>
       </div>
       <Projects />
+      <AboutMe />
     </>
   );
 };
