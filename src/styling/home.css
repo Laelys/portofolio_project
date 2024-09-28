@@ -56,3 +56,37 @@
 .quote__author {
   text-align: center;
 }
+
+.cta__section {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f5f5f5; /* Light background for contrast */
+}
+
+.cta__section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta__section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta__section__button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cta__section__button:hover {
+  background-color: #333;
+}

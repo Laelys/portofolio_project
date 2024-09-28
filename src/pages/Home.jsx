@@ -26,6 +26,11 @@ const Home = () => {
       </div>
       <Projects />
       <AboutMe />
+      <div className="cta__section">
+        <h2>New Section Title</h2>
+        <p>This is a description for the new section.</p>
+        <button className="cta__section__button">Click Me</button>
+      </div>
     </>
   );
 };
