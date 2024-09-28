@@ -1,0 +1,26 @@
+.carousel__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  height: 700px;
+  margin: 0 auto;
+  padding: 0 135px;
+  box-sizing: border-box;
+  background-color: aquamarine;
+}
+
+.container__text {
+  flex: 0 0 422px;
+  height: 357px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.carousel {
+  flex: 0 0 670px;
+  height: 480px;
+  margin-left: 78px;
+}
