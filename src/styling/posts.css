@@ -101,7 +101,7 @@
 
 .small__post__card {
   width: 270px;
-  height: 436px; /* Total height (270px image + 166px content) */
+  height: 436px;
   display: flex;
   flex-direction: column;
   background-color: #f4f4f4;

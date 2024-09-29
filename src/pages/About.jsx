@@ -1,20 +1,14 @@
 import Navbar from "../components/Navbar";
-import "../styling/about.css";
+import AboutMe from "../components/AboutMe";
+import Footer from "../components/Footer";
+import "../styling/aboutme.css";
 
 const About = () => {
   return (
     <>
       <Navbar />
-      <div className="about__container">
-        <div className="about__element">
-          <div className="about__image"></div>
-          <div className="about__content">
-            <p>Author Name</p>
-            <h1>Title of the Article</h1>
-            <button className="about__button">Read more</button>
-          </div>
-        </div>
-      </div>
+      <AboutMe />
+      <Footer />
     </>
   );
 };
