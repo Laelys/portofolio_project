@@ -1,0 +1,50 @@
+.ctaform__container {
+  height: 568px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.ctaform__text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.ctaform__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.ctaform__input,
+.ctaform__textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.ctaform__textarea {
+  height: 150px;
+  resize: none;
+}
+
+.ctaform__button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.ctaform__button:hover {
+  background-color: #555;
+}
