@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
-import Projects from "../components/Projects";
+import Projects from "../components/ProjectsComponent";
 import "../styling/home.css";
 import quoteImage from "../assets/quote-image/portrait.png";
 import AboutMe from "../components/AboutMe";

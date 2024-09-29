@@ -1,10 +1,13 @@
 import Navbar from "../components/Navbar";
+import ProjectsComponent from "../components/ProjectsComponent";
+import Footer from "../components/Footer";
 
 const Projects = () => {
   return (
     <>
       <Navbar />
-      <p>My projects on full display here</p>
+      <ProjectsComponent />
+      <Footer />
     </>
   );
 };

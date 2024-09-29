@@ -1,4 +1,4 @@
-import ProjectCard from "../components/subcomponents/ProjectCard";
+import ProjectCard from "./subcomponents/ProjectCard";
 import ProjectCardHorizontal from "./subcomponents/ProjectCardHorizontal";
 import "../styling/projects.css";
 import image1 from "../assets/projects-images/1.jpg";
@@ -10,7 +10,7 @@ import image6 from "../assets/projects-images/6.jpg";
 import image7 from "../assets/projects-images/7.jpg";
 import image8 from "../assets/projects-images/8.jpg";
 
-const Projects = () => {
+const ProjectsComponent = () => {
   return (
     <div className="projects__container">
       <h2 className="projects__title">My latest projects go here.</h2>
@@ -37,4 +37,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsComponent;
