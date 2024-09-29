@@ -1,0 +1,100 @@
+.posts__container {
+  background-color: rgb(184, 97, 97);
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.posts__element {
+  display: flex;
+  width: 1170px;
+  height: 370px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.posts__image {
+  width: 400px;
+  height: 100%;
+  background-color: gray;
+}
+
+.posts__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+.posts__content p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.posts__content h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.posts__button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.posts__button:hover {
+  background-color: #e0e0e0;
+}
+
+.posts__card__row {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.post__card {
+  width: 570px;
+  height: 290px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.post__card__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post__card__description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.post__card__button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.post__card__button:hover {
+  background-color: #555;
+}
