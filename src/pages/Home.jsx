@@ -4,6 +4,7 @@ import Projects from "../components/Projects";
 import "../styling/home.css";
 import quoteImage from "../assets/quote-image/portrait.png";
 import AboutMe from "../components/AboutMe";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
         <p>This is a description for the new section.</p>
         <button className="cta__section__button">Click Me</button>
       </div>
+      <Footer />
     </>
   );
 };
