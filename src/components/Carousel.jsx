@@ -34,10 +34,10 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextImage(); // This does not need to rely on currentIndex in the dependency array
+      nextImage();
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Clear the interval on unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -52,6 +52,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
         alt={`carousel-${currentIndex + 1}`}
         className={`carousel__image ${isLoaded ? "loaded" : ""}`} // Add "loaded" class when image is fully loaded
         onLoad={() => setIsLoaded(true)} // Mark the image as loaded
+        loading="lazy" // Lazy loading attribute
       />
 
       <button className="carousel__button next" onClick={nextImage}>

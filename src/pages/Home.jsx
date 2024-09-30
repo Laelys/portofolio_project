@@ -1,25 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 import Projects from "../components/ProjectsComponent";
-import quoteImage from "../assets/quote-image/portrait.png";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
-import background1 from "../assets/hero-section/marble1.jpg";
-import background2 from "../assets/hero-section/marble2.jpg";
-import background3 from "../assets/hero-section/marble3.jpg";
+import quoteImage from "../assets/quote-image/portrait.png";
+import background1 from "../assets/hero-section/marble1.webp";
+import background2 from "../assets/hero-section/marble2.webp";
+import background3 from "../assets/hero-section/marble3.webp";
 import "../styling/home.css";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const backgrounds = [background1, background2, background3];
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false); // Track loading state
+
+  // Preload background images
+  useEffect(() => {
+    backgrounds.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Handle background image loading
+  useEffect(() => {
+    const img = new Image();
+    img.src = backgrounds[currentIndex];
+    img.onload = () => setBackgroundLoaded(true); // Set background loaded state to true
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
 
   return (
     <>
       <Navbar />
       <div
         className="heroSection__container"
-        style={{ backgroundImage: `url(${backgrounds[currentIndex]})` }}
+        style={{
+          backgroundImage: backgroundLoaded
+            ? `url(${backgrounds[currentIndex]})`
+            : "none", // Only show background if loaded
+        }}
       >
         <div className="heroSection__text">
           <h2>Your best value proposition.</h2>
