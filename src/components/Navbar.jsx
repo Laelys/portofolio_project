@@ -27,13 +27,11 @@ const Navbar = () => {
         <li>
           <Link to="/about">About Me</Link>
         </li>
-        <li>
-          <Link to="/cta__form">CTA Form</Link>
-        </li>
       </ul>
-      <p className="navbar__logo">Logo</p>
+      <div className="navbar__logo">JG</div>{" "}
+      {/*Will be an image that is why it's a div*/}
       <button className="navbar__button" onClick={handleEmailClick}>
-        Contact
+        Contact Me
       </button>
     </nav>
   );
