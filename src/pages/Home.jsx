@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="carousel__container">
-        <div className="carousel__text">
+      <div className="heroSection__container">
+        <div className="heroSection__text">
           <h2>Your best value proposition.</h2>
           <p>Insert your paragraph here.</p>
           <button>Click me!</button>

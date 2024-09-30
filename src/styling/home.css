@@ -1,5 +1,8 @@
-.carousel__container {
-  background-color: bisque;
+.heroSection__container {
+  background-color: #fffced;
+  background-image: url(../assets/hero-section/marble3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +12,7 @@
   box-sizing: border-box;
 }
 
-.carousel__text {
+.heroSection__text {
   flex: 0 0 422px;
   height: 357px;
   display: flex;

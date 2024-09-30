@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to="/posts">Blog</Link>
         </li>
         <li>
-          <Link to="/about">About Me</Link>
+          <Link to="/about">About me</Link>
         </li>
       </ul>
       <div className="navbar__logo">JG</div>{" "}
