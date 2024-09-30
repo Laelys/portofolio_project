@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import image1 from "../assets/carousel-images/1.png";
 import image2 from "../assets/carousel-images/2.png";
@@ -7,17 +7,28 @@ import "../styling/carousel.css";
 
 const Carousel = ({ currentIndex, setCurrentIndex }) => {
   const images = [image1, image2, image3];
+  const [isLoaded, setIsLoaded] = useState(false); // Track when the image is loaded
+
+  // Preload images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+    setIsLoaded(false); // Reset loaded state when switching images
   };
 
   const prevImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+    setIsLoaded(false); // Reset loaded state when switching images
   };
 
   useEffect(() => {
@@ -37,7 +48,8 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
       <img
         src={images[currentIndex]}
         alt={`carousel-${currentIndex + 1}`}
-        className="carousel__image"
+        className={`carousel__image ${isLoaded ? "loaded" : ""}`} // Add "loaded" class when image is fully loaded
+        onLoad={() => setIsLoaded(true)} // Mark the image as loaded
       />
 
       <button className="carousel__button next" onClick={nextImage}>
