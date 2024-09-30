@@ -1,6 +1,4 @@
 .heroSection__container {
-  background-color: #fffced;
-  background-image: url(../assets/hero-section/marble3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

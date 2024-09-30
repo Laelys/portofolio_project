@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
-import "../styling/carousel.css";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import image1 from "../assets/carousel-images/1.png";
 import image2 from "../assets/carousel-images/2.png";
 import image3 from "../assets/carousel-images/3.png";
+import "../styling/carousel.css";
 
-const Carousel = () => {
+const Carousel = ({ currentIndex, setCurrentIndex }) => {
   const images = [image1, image2, image3];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) =>
@@ -27,7 +26,7 @@ const Carousel = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  });
+  }, [currentIndex]);
 
   return (
     <div className="carousel">
@@ -46,6 +45,11 @@ const Carousel = () => {
       </button>
     </div>
   );
+};
+
+Carousel.propTypes = {
+  currentIndex: PropTypes.number.isRequired,
+  setCurrentIndex: PropTypes.func.isRequired,
 };
 
 export default Carousel;
