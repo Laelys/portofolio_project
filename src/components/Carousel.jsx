@@ -7,7 +7,7 @@ import "../styling/carousel.css";
 
 const Carousel = ({ currentIndex, setCurrentIndex }) => {
   const images = [image1, image2, image3];
-  const [isLoaded, setIsLoaded] = useState(false); // Track when the image is loaded
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Preload images
   useEffect(() => {
@@ -15,6 +15,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
       const img = new Image();
       img.src = src;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const nextImage = () => {
@@ -33,11 +34,12 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextImage();
+      nextImage(); // This does not need to rely on currentIndex in the dependency array
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="carousel">
