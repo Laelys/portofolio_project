@@ -2,32 +2,34 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 const TypingEffect = ({ text, duration }) => {
-  const [characters, setCharacters] = useState([]);
+  const [visibleText, setVisibleText] = useState("");
 
   useEffect(() => {
-    const chars = text
-      .split("")
-      .map((char) => (char === " " ? "\u00A0" : char)); // Preserve spaces
-    setCharacters(chars);
-  }, [text]);
+    const totalChars = text.length;
+    let charIndex = 0;
+
+    const timer = setInterval(() => {
+      // Slice the text based on charIndex
+      setVisibleText(text.slice(0, charIndex + 1));
+      charIndex++;
+
+      // Stop when we reach the end of the string
+      if (charIndex >= totalChars) {
+        clearInterval(timer);
+      }
+    }, (duration * 1000) / totalChars);
+
+    // Cleanup function to reset on unmount or text change
+    return () => {
+      clearInterval(timer);
+      setVisibleText(""); // Clear the text when switching content
+    };
+  }, [text, duration]);
 
   return (
-    <p>
-      {characters.map((char, index) => (
-        <span
-          key={index}
-          style={{
-            animation: `fadeInLetter ${duration / characters.length}s linear`,
-            animationDelay: `${(index / characters.length) * duration}s`,
-            animationFillMode: "forwards", // Keep the letter visible after animation
-            opacity: 0,
-            display: "inline-block",
-          }}
-        >
-          {char}
-        </span>
-      ))}
-    </p>
+    <div className="typing__effect__container">
+      <p className="typing__effect__text">{visibleText}</p>
+    </div>
   );
 };
 

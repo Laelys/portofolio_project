@@ -95,6 +95,21 @@
   margin-top: 14px;
 }
 
+.typing__effect__container {
+  height: 325px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.typing__effect__text {
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
 .carousel {
   position: relative;
   z-index: 2;
