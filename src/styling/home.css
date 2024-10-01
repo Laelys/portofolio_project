@@ -1,14 +1,20 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("/src/assets/fonts/Raleway-VariableFont_wght.ttf");
+}
+
 .heroSection__container {
+  font-family: "Raleway";
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   max-width: 1440px;
   height: 700px;
-  padding: 0 135px;
+  padding: 110px 82px;
   box-sizing: border-box;
   transition: background-image 0.5s ease-in-out;
   z-index: 1;
@@ -27,13 +33,55 @@
 }
 
 .heroSection__text {
-  flex: 0 0 422px;
-  height: 357px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e1b26;
+  flex: 0 0 485px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   z-index: 2;
+  align-items: flex-start;
+  margin-left: 25px;
+}
+
+.heroSection__text h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1e1b26;
+  margin-bottom: 14px;
+}
+
+.heroSection__text p {
+  margin: 0;
+  flex: 1;
+}
+
+.heroSection__text button {
+  font-family: "raleway";
+  font-weight: 700;
+  font-size: 18px;
+  width: 200px;
+  height: 60px;
+  background-color: #bc6f2b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.heroSection__text button:hover {
+  background-color: #47313e;
+}
+
+.heroSection__text h2 + p {
+  margin-top: 14px;
 }
 
 .carousel {
@@ -41,8 +89,7 @@
   z-index: 2;
   flex: 0 0 670px;
   height: 480px;
-  margin-left: 78px;
-  margin-right: 135px;
+  margin-left: 68px;
 }
 
 .quote__container {

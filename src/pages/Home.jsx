@@ -49,7 +49,7 @@ const Home = () => {
         <div className="heroSection__text">
           <h2>Ioana Sohan-Gheorghian</h2>
           <p>{heroTexts[currentIndex]}</p>
-          <button>Click me!</button>
+          <button>More about me</button>
         </div>
         <Carousel
           currentIndex={currentIndex}
