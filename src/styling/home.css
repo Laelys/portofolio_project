@@ -37,7 +37,7 @@
   font-weight: 600;
   color: #1e1b26;
   flex: 0 0 485px;
-  height: 350px;
+  height: 425px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,11 +52,22 @@
   font-weight: 800;
   color: #1e1b26;
   margin-bottom: 14px;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 .heroSection__text p {
   margin: 0;
-  flex: 1;
+  display: inline-block;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes fadeInLetter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .heroSection__text button {

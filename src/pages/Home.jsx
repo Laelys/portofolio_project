@@ -9,12 +9,14 @@ import background1 from "../assets/hero-section/marble1.webp";
 import background2 from "../assets/hero-section/marble2.webp";
 import background3 from "../assets/hero-section/marble3.webp";
 import heroTexts from "../components/subcomponents/HeroTexts";
+import TypingEffect from "../components/TypingEffect";
 import "../styling/home.css";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const backgrounds = [background1, background2, background3];
-  const [backgroundLoaded, setBackgroundLoaded] = useState(false); // Track loading state
+  const [showText, setShowText] = useState(false);
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
 
   // Preload background images
   useEffect(() => {
@@ -22,15 +24,21 @@ const Home = () => {
       const img = new Image();
       img.src = src;
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [backgrounds]);
 
   // Handle background image loading
   useEffect(() => {
     const img = new Image();
     img.src = backgrounds[currentIndex];
-    img.onload = () => setBackgroundLoaded(true); // Set background loaded state to true
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    img.onload = () => setBackgroundLoaded(true);
+  }, [currentIndex]);
+
+  // Reset text animation when currentIndex changes
+  useEffect(() => {
+    setShowText(false);
+    const timeout = setTimeout(() => setShowText(true), 50);
+
+    return () => clearTimeout(timeout);
   }, [currentIndex]);
 
   return (
@@ -39,7 +47,7 @@ const Home = () => {
       <div
         className={`heroSection__container ${
           currentIndex === 0 ? "heroSection--withOpacity" : ""
-        }`} // Conditionally add class
+        }`}
         style={{
           backgroundImage: backgroundLoaded
             ? `url(${backgrounds[currentIndex]})`
@@ -48,7 +56,9 @@ const Home = () => {
       >
         <div className="heroSection__text">
           <h2>Ioana Sohan-Gheorghian</h2>
-          <p>{heroTexts[currentIndex]}</p>
+          {showText && (
+            <TypingEffect text={heroTexts[currentIndex]} duration={10} />
+          )}
           <button>More about me</button>
         </div>
         <Carousel

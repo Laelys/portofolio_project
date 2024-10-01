@@ -35,7 +35,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
-    }, 3000);
+    }, 15000);
 
     return () => clearInterval(interval); // Clear the interval on unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
