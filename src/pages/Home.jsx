@@ -5,16 +5,14 @@ import Projects from "../components/ProjectsComponent";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import quoteImage from "../assets/quote-image/portrait.png";
-import background1 from "../assets/hero-section/marble1.webp";
-import background2 from "../assets/hero-section/marble2.webp";
-import background3 from "../assets/hero-section/marble3.webp";
+import HeroBackgrounds from "../components/subcomponents/HeroBackgrounds";
 import heroTexts from "../components/subcomponents/HeroTexts";
 import TypingEffect from "../components/TypingEffect";
 import "../styling/home.css";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const backgrounds = [background1, background2, background3];
+  const backgrounds = HeroBackgrounds(); // Use the backgrounds from the new component
   const [showText, setShowText] = useState(false);
   const [backgroundLoaded, setBackgroundLoaded] = useState(false);
 
@@ -31,7 +29,7 @@ const Home = () => {
     const img = new Image();
     img.src = backgrounds[currentIndex];
     img.onload = () => setBackgroundLoaded(true);
-  }, [currentIndex]);
+  }, [currentIndex, backgrounds]);
 
   // Reset text animation when currentIndex changes
   useEffect(() => {

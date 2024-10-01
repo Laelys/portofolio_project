@@ -61,6 +61,21 @@
   text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
+.typing__effect__container {
+  height: 325px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.typing__effect__text {
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
 @keyframes fadeInLetter {
   from {
     opacity: 0;
