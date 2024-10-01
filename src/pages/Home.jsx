@@ -8,6 +8,7 @@ import quoteImage from "../assets/quote-image/portrait.png";
 import background1 from "../assets/hero-section/marble1.webp";
 import background2 from "../assets/hero-section/marble2.webp";
 import background3 from "../assets/hero-section/marble3.webp";
+import heroTexts from "../components/subcomponents/HeroTexts";
 import "../styling/home.css";
 
 const Home = () => {
@@ -36,16 +37,18 @@ const Home = () => {
     <>
       <Navbar />
       <div
-        className="heroSection__container"
+        className={`heroSection__container ${
+          currentIndex === 0 ? "heroSection--withOpacity" : ""
+        }`} // Conditionally add class
         style={{
           backgroundImage: backgroundLoaded
             ? `url(${backgrounds[currentIndex]})`
-            : "none", // Only show background if loaded
+            : "none",
         }}
       >
         <div className="heroSection__text">
-          <h2>Your best value proposition.</h2>
-          <p>Insert your paragraph here.</p>
+          <h2>Ioana Sohan-Gheorghian</h2>
+          <p>{heroTexts[currentIndex]}</p>
           <button>Click me!</button>
         </div>
         <Carousel

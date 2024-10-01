@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import PostCard from "../components/subcomponents/PostCard";
 import SmallPostCard from "../components/subcomponents/SmallPostCard";
 import "../styling/posts.css";
-import imageSrc1 from "../assets/carousel-images/1.png";
+import imageSrc1 from "../assets/carousel-images/Carousel1.webp";
 import Footer from "../components/Footer";
 
 const Posts = () => {

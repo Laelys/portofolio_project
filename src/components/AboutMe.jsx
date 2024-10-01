@@ -1,5 +1,5 @@
 import "../styling/aboutme.css";
-import ownerImage from "../assets/carousel-images/1.png";
+import ownerImage from "../assets/carousel-images/Carousel1.webp";
 
 const AboutMe = () => {
   return (

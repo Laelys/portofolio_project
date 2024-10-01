@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import image1 from "../assets/carousel-images/1.png";
-import image2 from "../assets/carousel-images/2.png";
-import image3 from "../assets/carousel-images/3.png";
+import image1 from "../assets/carousel-images/Carousel1.webp";
+import image2 from "../assets/carousel-images/Carousel2.webp";
+import image3 from "../assets/carousel-images/Carousel3.webp";
 import "../styling/carousel.css";
 
 const Carousel = ({ currentIndex, setCurrentIndex }) => {
@@ -43,7 +43,13 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
 
   return (
     <div className="carousel">
-      <button className="carousel__button prev" onClick={prevImage}>
+      <button
+        className="carousel__button prev"
+        onClick={() => {
+          prevImage();
+          document.activeElement.blur();
+        }}
+      >
         &#10094;
       </button>
 
@@ -55,7 +61,13 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
         loading="lazy" // Lazy loading attribute
       />
 
-      <button className="carousel__button next" onClick={nextImage}>
+      <button
+        className="carousel__button next"
+        onClick={() => {
+          nextImage();
+          document.activeElement.blur();
+        }}
+      >
         &#10095;
       </button>
     </div>
