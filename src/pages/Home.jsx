@@ -5,7 +5,7 @@ import Carousel from "../components/Carousel";
 import Projects from "../components/ProjectsComponent";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
-import quoteImage from "../assets/quote-image/portrait.png";
+import quoteImage from "../assets/quote-image/portrait.webp";
 import HeroBackgrounds from "../components/subcomponents/HeroBackgrounds";
 import heroTexts from "../components/subcomponents/HeroTexts";
 import TypingEffect from "../components/TypingEffect";
@@ -74,11 +74,23 @@ const Home = () => {
         />
       </div>
       <div className="quote__container">
-        <p className="quote__text">Add a quote here</p>
-        <div className="quote__portrait">
-          <img src={quoteImage} alt="Portrait" />
+        <div className="quote__content">
+          <p className="quote__text">
+            &quot;Form follows function - that has been misunderstood. Form and
+            function should be one, joined in a spiritual union.&quot;
+          </p>
+          <div className="quote__portrait">
+            <img src={quoteImage} alt="Portrait" />
+          </div>
+          <p className="quote__author">
+            Frank Lloyd Wright - architect, designer, writer, and educator
+          </p>
+          <div className="quote__graphics">
+            <div className="quote__rectangle__first"></div>
+            <div className="quote__rectangle__second"></div>
+            <div className="quote__rectangle__third"></div>
+          </div>
         </div>
-        <p className="quote__author">Authors name, occupation</p>
       </div>
       <Projects />
       <AboutMe />
