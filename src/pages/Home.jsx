@@ -12,7 +12,7 @@ import "../styling/home.css";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const backgrounds = HeroBackgrounds(); // Use the backgrounds from the new component
+  const backgrounds = HeroBackgrounds();
   const [showText, setShowText] = useState(false);
   const [backgroundLoaded, setBackgroundLoaded] = useState(false);
 
