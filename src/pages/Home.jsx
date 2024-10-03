@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 import Projects from "../components/ProjectsComponent";
@@ -63,7 +64,9 @@ const Home = () => {
               maxLength={maxLength} // Pass the longest text length to calculate typing speed
             />
           )}
-          <button>More about me</button>
+          <Link to="/about" className="heroSection__button">
+            More about me
+          </Link>
         </div>
         <Carousel
           currentIndex={currentIndex}

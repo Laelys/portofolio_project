@@ -70,8 +70,8 @@
   }
 }
 
-.heroSection__text button {
-  font-family: "raleway";
+.heroSection__button {
+  font-family: "Raleway";
   font-weight: 700;
   font-size: 18px;
   width: 200px;
@@ -82,12 +82,17 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   transition: background-color 0.3s ease;
   align-self: flex-start;
   flex-shrink: 0;
 }
 
-.heroSection__text button:hover {
+.heroSection__button:hover {
   background-color: #47313e;
 }
 
