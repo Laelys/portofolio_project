@@ -20,7 +20,9 @@
   z-index: 1;
 }
 
-.heroSection--withOpacity::before {
+/* This code is no longer in use but it will stay here as a reminder for the future that I tested applying an effect to an item gaining a temporary class  If uncommented the property will work again as I did not remove the class-giving property in Home.jsx */
+
+/* .heroSection--withOpacity::before {
   content: "";
   position: absolute;
   top: 0;
@@ -30,7 +32,7 @@
   background-color: rgba(255, 252, 237, 0.4);
   z-index: 1;
   pointer-events: none;
-}
+} */
 
 .heroSection__text {
   font-size: 20px;

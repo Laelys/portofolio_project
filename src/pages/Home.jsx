@@ -47,6 +47,7 @@ const Home = () => {
       <Navbar />
       <div
         className={`heroSection__container ${
+          // the first item of the index receives a temporary class while rendered to receive an opacity filter but I didn't like the transition so I disabled the CSS and edited the photo in PS; I will leave it in the code as a reminder of how this situation was resolved but the class doesn't do anything anymore.
           currentIndex === 0 ? "heroSection--withOpacity" : ""
         }`}
         style={{
