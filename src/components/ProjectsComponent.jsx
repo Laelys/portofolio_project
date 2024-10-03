@@ -29,17 +29,17 @@ const ProjectsComponent = () => {
       </p>
 
       <div className="projects__row">
-        <ProjectCard imageSrc={image1} description="Project 1" />
-        <ProjectCard imageSrc={image2} description="Project 2" />
-        <ProjectCard imageSrc={image3} description="Project 3" />
+        <ProjectCard imageSrc={image1} title="Title" description="Project " />
+        <ProjectCard imageSrc={image2} title="Title" description="Project 2" />
+        <ProjectCard imageSrc={image3} title="Title" description="Project 3" />
       </div>
 
       <ProjectCardHorizontal imageSrc={image7} description="Project 7" />
 
       <div className="projects__row">
-        <ProjectCard imageSrc={image4} description="Project 4" />
-        <ProjectCard imageSrc={image5} description="Project 5" />
-        <ProjectCard imageSrc={image6} description="Project 6" />
+        <ProjectCard imageSrc={image4} title="Title" description="Project 4" />
+        <ProjectCard imageSrc={image5} title="Title" description="Project 5" />
+        <ProjectCard imageSrc={image6} title="Title" description="Project 6" />
       </div>
 
       <ProjectCardHorizontal imageSrc={image8} description="Project 8" />
@@ -48,3 +48,5 @@ const ProjectsComponent = () => {
 };
 
 export default ProjectsComponent;
+
+// sa pun un data in public pentru fetch textele si pozele ca sa le fac un obiect si sa le iau cu fetch. de mutat pozele in public, le fac obiect si le iau de acolo. Simulare de API pentru ca nu folosesc API
