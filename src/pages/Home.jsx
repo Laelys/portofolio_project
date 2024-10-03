@@ -12,9 +12,11 @@ import "../styling/home.css";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const backgrounds = HeroBackgrounds();
+  const backgrounds = HeroBackgrounds(); // Use the backgrounds from the new component
   const [showText, setShowText] = useState(false);
   const [backgroundLoaded, setBackgroundLoaded] = useState(false);
+
+  const maxLength = Math.max(...heroTexts.map((text) => text.length)); // Find the longest text
 
   // Preload background images
   useEffect(() => {
@@ -55,7 +57,11 @@ const Home = () => {
         <div className="heroSection__text">
           <h2>Ioana Sohan-Gheorghian</h2>
           {showText && (
-            <TypingEffect text={heroTexts[currentIndex]} duration={10} />
+            <TypingEffect
+              text={heroTexts[currentIndex]}
+              duration={10} // Set the display time for the longest text
+              maxLength={maxLength} // Pass the longest text length to calculate typing speed
+            />
           )}
           <button>More about me</button>
         </div>
