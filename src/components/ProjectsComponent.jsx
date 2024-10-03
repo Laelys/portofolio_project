@@ -13,9 +13,19 @@ import image8 from "../assets/projects-images/8.jpg";
 const ProjectsComponent = () => {
   return (
     <div className="projects__container">
-      <h2 className="projects__title">My latest projects go here.</h2>
+      <div className="projects__graphics">
+        <div className="projects__rectangle__first"></div>
+        <div className="projects__rectangle__second"></div>
+        <div className="projects__rectangle__third"></div>
+      </div>
+      <h2 className="projects__title">
+        With 6 years of experience, I have built a diverse portofolio by
+        collaborating with various designers on a wide range of projects.
+      </h2>
       <p className="projects__description">
-        Here are some of my latest projects. I hope you like them
+        My expertise is backed by proficiency in industry-standard tools such as
+        3DS Max and AutoCAD, enabling me to bring creative visions to life with
+        precision and innovation.
       </p>
 
       <div className="projects__row">
