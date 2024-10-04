@@ -1,16 +1,19 @@
+import { useEffect, useState } from "react";
 import ProjectCard from "./subcomponents/ProjectCard";
 import ProjectCardHorizontal from "./subcomponents/ProjectCardHorizontal";
 import "../styling/projects.css";
-import image1 from "../assets/projects-images/1.jpg";
-import image2 from "../assets/projects-images/2.jpg";
-import image3 from "../assets/projects-images/3.jpg";
-import image4 from "../assets/projects-images/4.jpg";
-import image5 from "../assets/projects-images/5.jpg";
-import image6 from "../assets/projects-images/6.jpg";
-import image7 from "../assets/projects-images/7.jpg";
-import image8 from "../assets/projects-images/8.jpg";
 
 const ProjectsComponent = () => {
+  const [projectsData, setProjectsData] = useState([]);
+
+  useEffect(() => {
+    // Fetch the data from the JSON file in the public folder
+    fetch("/projectsData.json")
+      .then((response) => response.json())
+      .then((data) => setProjectsData(data))
+      .catch((error) => console.error("Error fetching project data:", error));
+  }, []);
+
   return (
     <div className="projects__container">
       <div className="projects__graphics">
@@ -19,7 +22,7 @@ const ProjectsComponent = () => {
         <div className="projects__rectangle__third"></div>
       </div>
       <h2 className="projects__title">
-        With 6 years of experience, I have built a diverse portofolio by
+        With 6 years of experience, I have built a diverse portfolio by
         collaborating with various designers on a wide range of projects.
       </h2>
       <p className="projects__description">
@@ -28,21 +31,47 @@ const ProjectsComponent = () => {
         precision and innovation.
       </p>
 
+      {/* Render the first set of project cards */}
       <div className="projects__row">
-        <ProjectCard imageSrc={image1} title="Title" description="Project " />
-        <ProjectCard imageSrc={image2} title="Title" description="Project 2" />
-        <ProjectCard imageSrc={image3} title="Title" description="Project 3" />
+        {projectsData.slice(0, 3).map((project, index) => (
+          <ProjectCard
+            key={index}
+            imageSrc={project.imageSrc}
+            title={project.title}
+            description={project.description}
+          />
+        ))}
       </div>
 
-      <ProjectCardHorizontal imageSrc={image7} description="Project 7" />
+      {/* Render the first horizontal project card */}
+      {projectsData[6] && (
+        <ProjectCardHorizontal
+          imageSrc={projectsData[6].imageSrc}
+          title={projectsData[6].title}
+          description={projectsData[6].description}
+        />
+      )}
 
+      {/* Render the second set of project cards */}
       <div className="projects__row">
-        <ProjectCard imageSrc={image4} title="Title" description="Project 4" />
-        <ProjectCard imageSrc={image5} title="Title" description="Project 5" />
-        <ProjectCard imageSrc={image6} title="Title" description="Project 6" />
+        {projectsData.slice(3, 6).map((project, index) => (
+          <ProjectCard
+            key={index}
+            imageSrc={project.imageSrc}
+            title={project.title}
+            description={project.description}
+          />
+        ))}
       </div>
 
-      <ProjectCardHorizontal imageSrc={image8} description="Project 8" />
+      {/* Render the second horizontal project card */}
+      {projectsData[7] && (
+        <ProjectCardHorizontal
+          imageSrc={projectsData[7].imageSrc}
+          title={projectsData[7].title}
+          description={projectsData[7].description}
+        />
+      )}
     </div>
   );
 };
