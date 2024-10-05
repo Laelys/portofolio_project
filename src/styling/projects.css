@@ -122,8 +122,8 @@
 
 .projects__graphics {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 0px;
+  top: 0px;
 }
 
 .projects__rectangle__first {
@@ -133,12 +133,11 @@
   height: 267px;
   background-color: #d7c2ad;
   box-shadow: 4px 4px 8px 0px #00000040;
-  z-index: 41;
+  z-index: 1;
 }
 
 .projects__rectangle__second {
   position: absolute;
-
   right: 96px;
   width: 281px;
   height: 152px;
@@ -151,6 +150,45 @@
   right: 340px;
   width: 56px;
   height: 105px;
+  background-color: #bc6f2b;
+  box-shadow: 4px 4px 8px 0px #00000040;
+  z-index: 1;
+}
+
+.projects__graphics__bottom {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.projects__rectangle__first__bottom {
+  position: absolute;
+  left: 151px;
+  bottom: 0px;
+  width: 55px;
+  height: 637px;
+  background-color: #d7c2ad;
+  box-shadow: 4px 4px 8px 0px #00000040;
+  z-index: 1;
+}
+
+.projects__rectangle__second__bottom {
+  position: absolute;
+  left: 216px;
+  bottom: 0px;
+  width: 297px;
+  height: 231px;
+  background-color: #193d61;
+  box-shadow: 4px 4px 8px 0px #00000040;
+  z-index: 1;
+}
+
+.projects__rectangle__third__bottom {
+  position: absolute;
+  left: 523px;
+  bottom: 0px;
+  width: 55px;
+  height: 160px;
   background-color: #bc6f2b;
   box-shadow: 4px 4px 8px 0px #00000040;
   z-index: 1;

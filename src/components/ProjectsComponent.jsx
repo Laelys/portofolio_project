@@ -72,6 +72,11 @@ const ProjectsComponent = () => {
           description={projectsData[7].description}
         />
       )}
+      <div className="projects__graphics__bottom">
+        <div className="projects__rectangle__first__bottom"></div>
+        <div className="projects__rectangle__second__bottom"></div>
+        <div className="projects__rectangle__third__bottom"></div>
+      </div>
     </div>
   );
 };
