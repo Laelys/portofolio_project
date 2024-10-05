@@ -1,0 +1,42 @@
+[
+  {
+    "imageSrc": "/projects-images/projects1.webp",
+    "title": "Timeless Serenity",
+    "description": "This project exudes tranquility and refinement through its clean lines and neutral color palette. The soft curves of the seating contrast beautifully with the rich wood accents, while the illuminated shelving adds a touch of warmth."
+  },
+  {
+    "imageSrc": "/projects-images/projects2.webp",
+    "title": "Opulence in Motion",
+    "description": "This project blends modern luxury with organic elements. The striking chandelier creates a sense of movement, complementing the nautral palette of soft furnishings and textured walls."
+  },
+  {
+    "imageSrc": "/projects-images/projects3.webp",
+    "title": "Urban Elegance",
+    "description": "This project combines modern minimalism with functional sophistication. The clean, mutes palette creates a sense of calm, while the reflective surfaces and integrated lighting elevate the design."
+  },
+  {
+    "imageSrc": "/projects-images/projects4.webp",
+    "title": "Radiant Retreat",
+    "description": "A stylish and inviting space infused with natural light and a calming color palette, tailored to provide a sense of tranquility for the family."
+  },
+  {
+    "imageSrc": "/projects-images/projects5.webp",
+    "title": "Sophisticated Solitude",
+    "description": "A modern living space crafted with a blend of sophistication and masculine touches, perfect for a bachelor who appreciates thoughtfully designed spaces. The use of rich textures and warm tones exudes a sense of comfort and refinement."
+  },
+  {
+    "imageSrc": "/projects-images/projects6.webp",
+    "title": "Classic Comfort",
+    "description": "This living space was designed to combine the best of both worlds, blending neutral tones with classical elements in its decor. The residence caters to a fmaily seeking a refined yet comfortable atmosphere within a charming residential area outside the city."
+  },
+  {
+    "imageSrc": "/projects-images/project-horizontal1.webp",
+    "title": "Natural Embrace",
+    "description": "A countryside residence designed with a warm, neutral tones and high-quality materials to evoke a sense of tranquility and understated elegance. The family's own decorations add a touch of personality to the spaces, making the home uniquely their own."
+  },
+  {
+    "imageSrc": "/projects-images/project-horizontal2.webp",
+    "title": "Urban Sophistication",
+    "description": "A countryside residence designed with warm, neutral tones and high-quality materials to evoke a sense of tranquility and understated elegance. The family's own decorations add a touch of personality to the spaces, making the home uniquely their own."
+  }
+]

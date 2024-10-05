@@ -1,40 +1,86 @@
+import { useEffect, useState } from "react";
 import ProjectCard from "./subcomponents/ProjectCard";
 import ProjectCardHorizontal from "./subcomponents/ProjectCardHorizontal";
 import "../styling/projects.css";
-import image1 from "../assets/projects-images/1.jpg";
-import image2 from "../assets/projects-images/2.jpg";
-import image3 from "../assets/projects-images/3.jpg";
-import image4 from "../assets/projects-images/4.jpg";
-import image5 from "../assets/projects-images/5.jpg";
-import image6 from "../assets/projects-images/6.jpg";
-import image7 from "../assets/projects-images/7.jpg";
-import image8 from "../assets/projects-images/8.jpg";
 
 const ProjectsComponent = () => {
+  const [projectsData, setProjectsData] = useState([]);
+
+  useEffect(() => {
+    // Fetch the data from the JSON file in the public folder
+    fetch("/projectsData.json")
+      .then((response) => response.json())
+      .then((data) => setProjectsData(data))
+      .catch((error) => console.error("Error fetching project data:", error));
+  }, []);
+
   return (
     <div className="projects__container">
-      <h2 className="projects__title">My latest projects go here.</h2>
+      <div className="projects__graphics">
+        <div className="projects__rectangle__first"></div>
+        <div className="projects__rectangle__second"></div>
+        <div className="projects__rectangle__third"></div>
+      </div>
+      <h2 className="projects__title">
+        With 6 years of experience, I have built a diverse portfolio by
+        collaborating with various designers on a wide range of projects.
+      </h2>
       <p className="projects__description">
-        Here are some of my latest projects. I hope you like them
+        My expertise is backed by proficiency in industry-standard tools such as
+        3DS Max and AutoCAD, enabling me to bring creative visions to life with
+        precision and innovation.
       </p>
 
+      {/* Render the first set of project cards */}
       <div className="projects__row">
-        <ProjectCard imageSrc={image1} description="Project 1" />
-        <ProjectCard imageSrc={image2} description="Project 2" />
-        <ProjectCard imageSrc={image3} description="Project 3" />
+        {projectsData.slice(0, 3).map((project, index) => (
+          <ProjectCard
+            key={index}
+            imageSrc={project.imageSrc}
+            title={project.title}
+            description={project.description}
+          />
+        ))}
       </div>
 
-      <ProjectCardHorizontal imageSrc={image7} description="Project 7" />
+      {/* Render the first horizontal project card */}
+      {projectsData[6] && (
+        <ProjectCardHorizontal
+          imageSrc={projectsData[6].imageSrc}
+          title={projectsData[6].title}
+          description={projectsData[6].description}
+        />
+      )}
 
+      {/* Render the second set of project cards */}
       <div className="projects__row">
-        <ProjectCard imageSrc={image4} description="Project 4" />
-        <ProjectCard imageSrc={image5} description="Project 5" />
-        <ProjectCard imageSrc={image6} description="Project 6" />
+        {projectsData.slice(3, 6).map((project, index) => (
+          <ProjectCard
+            key={index}
+            imageSrc={project.imageSrc}
+            title={project.title}
+            description={project.description}
+          />
+        ))}
       </div>
 
-      <ProjectCardHorizontal imageSrc={image8} description="Project 8" />
+      {/* Render the second horizontal project card */}
+      {projectsData[7] && (
+        <ProjectCardHorizontal
+          imageSrc={projectsData[7].imageSrc}
+          title={projectsData[7].title}
+          description={projectsData[7].description}
+        />
+      )}
+      <div className="projects__graphics__bottom">
+        <div className="projects__rectangle__first__bottom"></div>
+        <div className="projects__rectangle__second__bottom"></div>
+        <div className="projects__rectangle__third__bottom"></div>
+      </div>
     </div>
   );
 };
 
 export default ProjectsComponent;
+
+// sa pun un data in public pentru fetch textele si pozele ca sa le fac un obiect si sa le iau cu fetch. de mutat pozele in public, le fac obiect si le iau de acolo. Simulare de API pentru ca nu folosesc API

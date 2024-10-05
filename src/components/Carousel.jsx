@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import image1 from "../assets/carousel-images/Carousel1.webp";
 import image2 from "../assets/carousel-images/Carousel2.webp";
@@ -6,40 +6,51 @@ import image3 from "../assets/carousel-images/Carousel3.webp";
 import "../styling/carousel.css";
 
 const Carousel = ({ currentIndex, setCurrentIndex }) => {
-  const images = [image1, image2, image3];
-  const [isLoaded, setIsLoaded] = useState(false);
+  const images = useMemo(() => [image1, image2, image3], []);
+  const [isLoaded, setIsLoaded] = useState(true); // Start as true for the first image
 
   // Preload images
   useEffect(() => {
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const preloadImages = () => {
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+    preloadImages();
+  }, [images]);
 
+  // Function to move to the next image
   const nextImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-    setIsLoaded(false); // Reset loaded state when switching images
+    setIsLoaded(false); // Set to false to start the transition
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+      setIsLoaded(true); // Set to true once image changes
+    }, 1500); // Wait for 1.5 seconds (transition duration)
   };
 
+  // Function to move to the previous image
   const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-    setIsLoaded(false); // Reset loaded state when switching images
+    setIsLoaded(false); // Set to false to start the transition
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setIsLoaded(true); // Set to true once image changes
+    }, 1500); // Wait for 1.5 seconds (transition duration)
   };
 
+  // Timer logic to automatically cycle images
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       nextImage();
-    }, 15000);
+    }, 12000); // 12 seconds: 10 for typing + 2 seconds to read
 
-    return () => clearInterval(interval); // Clear the interval on unmount
+    return () => clearInterval(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentIndex, images.length]);
 
   return (
     <div className="carousel">
@@ -47,7 +58,7 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
         className="carousel__button prev"
         onClick={() => {
           prevImage();
-          document.activeElement.blur();
+          document.activeElement.blur(); // Remove button focus after click
         }}
       >
         &#10094;
@@ -56,16 +67,15 @@ const Carousel = ({ currentIndex, setCurrentIndex }) => {
       <img
         src={images[currentIndex]}
         alt={`carousel-${currentIndex + 1}`}
-        className={`carousel__image ${isLoaded ? "loaded" : ""}`} // Add "loaded" class when image is fully loaded
-        onLoad={() => setIsLoaded(true)} // Mark the image as loaded
-        loading="lazy" // Lazy loading attribute
+        className={`carousel__image ${isLoaded ? "loaded" : ""}`}
+        loading="lazy"
       />
 
       <button
         className="carousel__button next"
         onClick={() => {
           nextImage();
-          document.activeElement.blur();
+          document.activeElement.blur(); // Remove button focus after click
         }}
       >
         &#10095;
