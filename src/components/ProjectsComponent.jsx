@@ -82,5 +82,3 @@ const ProjectsComponent = () => {
 };
 
 export default ProjectsComponent;
-
-// sa pun un data in public pentru fetch textele si pozele ca sa le fac un obiect si sa le iau cu fetch. de mutat pozele in public, le fac obiect si le iau de acolo. Simulare de API pentru ca nu folosesc API
