@@ -5,11 +5,13 @@ const ProjectCardHorizontal = ({ imageSrc, title, description }) => {
     <div className="project__card__horizontal">
       <img
         src={imageSrc}
-        alt="Project"
+        alt={title}
         className="project__card__horizontal__image"
       />
-      <h3 className="project__card__horizontal__title">{title}</h3>
-      <p className="project__card__horizontal__description">{description}</p>
+      <div className="project__card__horizontal__content">
+        <h3 className="project__card__horizontal__title">{title}</h3>
+        <p className="project__card__horizontal__description">{description}</p>
+      </div>
     </div>
   );
 };
