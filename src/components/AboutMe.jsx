@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styling/aboutme.css";
-import ownerImage from "../assets/carousel-images/Carousel1.webp";
+import ownerImage from "../assets/owner-image/avatar.webp";
 
 const AboutMe = () => {
   return (

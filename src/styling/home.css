@@ -227,35 +227,120 @@
 }
 
 .cta__section {
-  height: 500px;
+  font-family: "Raleway";
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #fffced;
+  position: relative;
+  overflow: hidden;
 }
 
 .cta__section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .cta__section p {
-  font-size: 18px;
-  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 35px;
 }
 
 .cta__section__button {
-  background-color: black;
+  font-family: "Raleway";
+  background-color: #bc6f2b;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.5s ease;
+  text-decoration: none;
 }
 
 .cta__section__button:hover {
-  background-color: #333;
+  background-color: #47313e;
+}
+
+.cta__graphics__top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.cta__rectangle__top__first,
+.cta__rectangle__top__second,
+.cta__rectangle__top__third {
+  position: absolute;
+  top: 0;
+  box-shadow: 4px 4px 8px 0px #00000040;
+}
+
+.cta__rectangle__top__first {
+  left: 151px;
+  width: 55px;
+  height: 289px;
+  background-color: #d7c2ad;
+  z-index: 1;
+}
+
+.cta__rectangle__top__second {
+  left: 216px;
+  width: 297px;
+  height: 208px;
+  background-color: #193d61;
+}
+
+.cta__rectangle__top__third {
+  left: 523px;
+  width: 55px;
+  height: 133px;
+  background-color: #bc6f2b;
+}
+
+.cta__graphics__bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.cta__rectangle__bottom__first,
+.cta__rectangle__bottom__second,
+.cta__rectangle__bottom__third {
+  position: absolute;
+  bottom: 0;
+  box-shadow: 4px 4px 8px 0px #00000040;
+}
+
+.cta__rectangle__bottom__first {
+  right: 168px;
+  width: 294px;
+  height: 58px;
+  background-color: #d7c2ad;
+}
+
+.cta__rectangle__bottom__second {
+  right: 140px;
+  width: 55px;
+  height: 131px;
+  background-color: #193d61;
+  z-index: 1;
+}
+
+.cta__rectangle__bottom__third {
+  right: 214px;
+  width: 181px;
+  height: 94px;
+  background-color: #bc6f2b;
+  z-index: 1;
 }

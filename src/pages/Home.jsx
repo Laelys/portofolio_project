@@ -96,9 +96,21 @@ const Home = () => {
       <Projects />
       <AboutMe />
       <div className="cta__section">
-        <h2>New Section Title</h2>
-        <p>This is a description for the new section.</p>
-        <button className="cta__section__button">Click Me</button>
+        <div className="cta__graphics__top">
+          <div className="cta__rectangle__top__first"></div>
+          <div className="cta__rectangle__top__second"></div>
+          <div className="cta__rectangle__top__third"></div>
+        </div>
+        <h2>Ready to get started?</h2>
+        <p>Let us make something beautiful together.</p>
+        <Link to="/cta" className="cta__section__button">
+          Contact me
+        </Link>
+        <div className="cta__graphics__bottom">
+          <div className="cta__rectangle__bottom__first"></div>
+          <div className="cta__rectangle__bottom__second"></div>
+          <div className="cta__rectangle__bottom__third"></div>
+        </div>
       </div>
       <Footer />
     </>

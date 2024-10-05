@@ -73,6 +73,11 @@
   font-weight: 700;
   margin-top: 20px;
   text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+
+.aboutMe__button:hover {
+  background-color: #3283d3;
 }
 
 .about__graphics {

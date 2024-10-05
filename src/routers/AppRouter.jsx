@@ -13,7 +13,7 @@ const AppRouter = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cta__form" element={<CtaForm />} />
+        <Route path="/cta" element={<CtaForm />} />
       </Routes>
     </BrowserRouter>
   );
