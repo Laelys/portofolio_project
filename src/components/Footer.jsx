@@ -4,6 +4,11 @@ import "../styling/footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="footer__graphics">
+        <div className="footer__rectangle__first"></div>
+        <div className="footer__rectangle__second"></div>
+        <div className="footer__rectangle__third"></div>
+      </div>
       <div className="footer__links__container">
         <div className="footer__links__left">
           <Link
@@ -17,7 +22,7 @@ const Footer = () => {
             Projects
           </Link>
         </div>
-        <div className="footer__logo">Logo</div>
+        <div className="footer__logo">JG</div>
         <div className="footer__links__right">
           <Link to="/about" className="footer__link">
             About
@@ -25,15 +30,15 @@ const Footer = () => {
           <Link to="/posts" className="footer__link">
             Blog
           </Link>
-          <Link to="/cta__form" className="footer__link">
+          <Link to="/cta" className="footer__link">
             Contact Me
           </Link>
         </div>
       </div>
       <div className="footer__divider"></div>
       <div className="footer__info">
-        <p>Paragraph 1 content goes here.</p>
-        <p>Paragraph 2 content goes here.</p>
+        <p>Privacy Terms</p>
+        <p>Thanks for stopping by!</p>
       </div>
     </footer>
   );
