@@ -1,15 +1,24 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("/src/assets/fonts/Raleway-VariableFont_wght.ttf");
+}
+
 .ctaform__container {
+  font-family: "Raleway";
   height: 568px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #f9f9f9;
+  align-items: left;
+  padding: 0 140px;
+  background-color: #fffced;
+  overflow: hidden;
+  position: relative;
 }
 
 .ctaform__text {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -18,16 +27,19 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  max-width: 400px;
 }
 
 .ctaform__input,
 .ctaform__textarea {
+  font-family: "Raleway";
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid #193d61;
   border-radius: 5px;
   font-size: 16px;
+}
+.ctaform__input {
+  max-width: 360px;
 }
 
 .ctaform__textarea {
@@ -36,15 +48,19 @@
 }
 
 .ctaform__button {
-  background-color: #333;
+  font-family: "Raleway";
+  background-color: #193d61;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 23px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.5s ease;
+  max-width: 180px;
+  border-radius: 5px;
 }
 
 .ctaform__button:hover {
-  background-color: #555;
+  background-color: #3283d3;
 }

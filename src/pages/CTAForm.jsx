@@ -19,7 +19,7 @@ const CtaForm = () => {
     <>
       <Navbar />
       <div className="ctaform__container">
-        <p className="ctaform__text">Let me know if I can help you</p>
+        <p className="ctaform__text">Tell me more about your project</p>
         <form className="ctaform__form" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -37,7 +37,7 @@ const CtaForm = () => {
             required
           ></textarea>
           <button type="submit" className="ctaform__button">
-            Send
+            Send message
           </button>
         </form>
       </div>
