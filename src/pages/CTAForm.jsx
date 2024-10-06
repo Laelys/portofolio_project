@@ -40,6 +40,11 @@ const CtaForm = () => {
             Send message
           </button>
         </form>
+        <div className="ctaForm__graphics__">
+          <div className="ctaForm__rectangle__first"></div>
+          <div className="ctaForm__rectangle__second"></div>
+          <div className="ctaForm__rectangle__third"></div>
+        </div>
       </div>
       <Footer />
     </>
