@@ -92,7 +92,7 @@
 .about__rectangle__third {
   position: absolute;
   bottom: 0;
-  box-shadow: 4px 4px 8px 0px #00000040;
+  box-shadow: 4px 0px 12px 0px #00000040;
 }
 
 .about__rectangle__first {
