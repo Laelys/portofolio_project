@@ -94,7 +94,7 @@ const Home = () => {
         </div>
       </div>
       <ProjectsComponent variant="home" />
-      <AboutMe />
+      <AboutMe variant="home" />
       <div className="cta__section">
         <div className="cta__graphics__top">
           <div className="cta__rectangle__top__first"></div>

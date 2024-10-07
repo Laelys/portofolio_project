@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <AboutMe />
+      <AboutMe variant="aboutPage" />
       <Footer />
     </>
   );

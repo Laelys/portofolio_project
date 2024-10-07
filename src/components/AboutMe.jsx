@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "../styling/aboutme.css";
 import ownerImage from "../assets/owner-image/avatar.webp";
 
-const AboutMe = () => {
+const AboutMe = ({ variant = "home" }) => {
   return (
-    <div className="aboutMe__container">
+    <div
+      className={`aboutMe__container ${
+        variant === "aboutPage" ? "aboutPage__variant" : ""
+      }`}
+    >
       <div className="aboutMe__image__container">
         <div className="aboutMe__photo__frame">
           <img src={ownerImage} alt="Site Owner" className="aboutMe__photo" />
@@ -36,8 +41,22 @@ const AboutMe = () => {
         <div className="about__rectangle__second"></div>
         <div className="about__rectangle__third"></div>
       </div>
+
+      {/* Conditional Rendering for About Page Extra Bottom Graphics */}
+      {variant === "aboutPage" && (
+        <div className="about__bottom__graphics">
+          <div className="about__bottom__rectangle__first"></div>
+          <div className="about__bottom__rectangle__second"></div>
+          <div className="about__bottom__rectangle__third"></div>
+        </div>
+      )}
     </div>
   );
+};
+
+// Define propTypes for the AboutMe component
+AboutMe.propTypes = {
+  variant: PropTypes.oneOf(["home", "aboutPage"]), // Define prop type for variant
 };
 
 export default AboutMe;
