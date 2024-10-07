@@ -255,3 +255,40 @@
   height: 231px;
   background-color: #bc6f2b;
 }
+
+/* Styles for the Projects Page Bottom Graphics */
+.projects__graphics__bottom2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.projects__bottom2__rectangle__first,
+.projects__bottom2__rectangle__second,
+.projects__bottom2__rectangle__third {
+  position: absolute;
+  bottom: 0;
+  box-shadow: 4px 0px 12px 0px #00000040;
+  z-index: 1;
+}
+
+.projects__bottom2__rectangle__first {
+  right: 168px;
+  width: 294px;
+  height: 45px;
+  background-color: #d7c2ad;
+}
+
+.projects__bottom2__rectangle__second {
+  right: 140px;
+  width: 55px;
+  height: 104px;
+  background-color: #193d61;
+}
+
+.projects__bottom2__rectangle__third {
+  right: 214px;
+  width: 181px;
+  height: 80px;
+  background-color: #bc6f2b;
+}

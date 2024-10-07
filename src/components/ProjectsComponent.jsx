@@ -84,6 +84,15 @@ const ProjectsComponent = ({ variant = "home" }) => {
         <div className="projects__rectangle__second__bottom"></div>
         <div className="projects__rectangle__third__bottom"></div>
       </div>
+
+      {/* Conditional Rendering of the New Graphics for the Projects Page */}
+      {variant === "projectsPage" && (
+        <div className="projects__graphics__bottom2">
+          <div className="projects__bottom2__rectangle__first"></div>
+          <div className="projects__bottom2__rectangle__second"></div>
+          <div className="projects__bottom2__rectangle__third"></div>
+        </div>
+      )}
     </div>
   );
 };
