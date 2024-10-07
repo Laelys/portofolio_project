@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   padding: 100px 140px;
   background-color: #fffced;
   overflow: hidden;
@@ -38,6 +38,7 @@
   border-radius: 5px;
   font-size: 16px;
 }
+
 .ctaform__input {
   max-width: 360px;
 }
@@ -89,12 +90,16 @@
   background-color: #d7c2ad;
 }
 
+.ctaForm__rectangle__second,
+.ctaForm__rectangle__third {
+  z-index: 1;
+  background-color: #193d61;
+}
+
 .ctaForm__rectangle__second {
   right: 140px;
   width: 55px;
   height: 131px;
-  background-color: #193d61;
-  z-index: 1;
 }
 
 .ctaForm__rectangle__third {
@@ -102,5 +107,4 @@
   width: 181px;
   height: 94px;
   background-color: #bc6f2b;
-  z-index: 1;
 }

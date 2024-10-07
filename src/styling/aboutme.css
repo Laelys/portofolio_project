@@ -13,19 +13,20 @@
   overflow: hidden;
 }
 
-.aboutMe__image__container {
-  width: 50%;
+.aboutMe__image__container,
+.aboutMe__photo__frame {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.aboutMe__image__container {
+  width: 50%;
+}
+
 .aboutMe__photo__frame {
   width: 463px;
   height: 463px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .aboutMe__photo {
@@ -47,19 +48,17 @@
 }
 
 .aboutMe__content h2 {
-  margin: 0;
+  margin: 0 0 43px 0;
   font-size: 30px;
   font-weight: 700;
   text-align: left;
-  margin-bottom: 43px;
 }
 
 .aboutMe__content p {
   font-size: 20px;
   font-weight: 400;
   text-align: left;
-  margin-bottom: 28px;
-  margin-top: 0px;
+  margin: 0 0 28px 0;
 }
 
 .aboutMe__button {
@@ -93,12 +92,12 @@
   position: absolute;
   bottom: 0;
   box-shadow: 4px 0px 12px 0px #00000040;
+  height: 100%;
 }
 
 .about__rectangle__first {
   left: 151px;
   width: 55px;
-  height: 100%;
   background-color: #d7c2ad;
   z-index: 1;
 }
@@ -106,13 +105,11 @@
 .about__rectangle__second {
   left: 216px;
   width: 297px;
-  height: 100%;
   background-color: #193d61;
 }
 
 .about__rectangle__third {
   left: 523px;
   width: 55px;
-  height: 100%;
   background-color: #bc6f2b;
 }
