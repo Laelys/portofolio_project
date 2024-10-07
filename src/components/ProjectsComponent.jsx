@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import ProjectCard from "./subcomponents/ProjectCard";
 import ProjectCardHorizontal from "./subcomponents/ProjectCardHorizontal";
-import "../styling/projects.css";
+import "../styling/projects.css"; // Assuming both styles will be in this file
 
-const ProjectsComponent = () => {
+const ProjectsComponent = ({ variant = "home" }) => {
   const [projectsData, setProjectsData] = useState([]);
 
   useEffect(() => {
@@ -15,12 +16,17 @@ const ProjectsComponent = () => {
   }, []);
 
   return (
-    <div className="projects__container">
+    <div
+      className={`projects__container ${
+        variant === "projectsPage" ? "projectsPage__variant" : ""
+      }`}
+    >
       <div className="projects__graphics">
         <div className="projects__rectangle__first"></div>
         <div className="projects__rectangle__second"></div>
         <div className="projects__rectangle__third"></div>
       </div>
+
       <h2 className="projects__title">
         With 6 years of experience, I have built a diverse portfolio by
         collaborating with various designers on a wide range of projects.
@@ -72,6 +78,7 @@ const ProjectsComponent = () => {
           description={projectsData[7].description}
         />
       )}
+
       <div className="projects__graphics__bottom">
         <div className="projects__rectangle__first__bottom"></div>
         <div className="projects__rectangle__second__bottom"></div>
@@ -82,3 +89,7 @@ const ProjectsComponent = () => {
 };
 
 export default ProjectsComponent;
+
+ProjectsComponent.propTypes = {
+  variant: PropTypes.oneOf(["home", "projectsPage"]), // Define prop type for variant
+};

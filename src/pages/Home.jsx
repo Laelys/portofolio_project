@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
-import Projects from "../components/ProjectsComponent";
+import ProjectsComponent from "../components/ProjectsComponent";
 import AboutMe from "../components/AboutMe";
 import Footer from "../components/Footer";
 import quoteImage from "../assets/quote-image/portrait.webp";
@@ -93,7 +93,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Projects />
+      <ProjectsComponent variant="home" />
       <AboutMe />
       <div className="cta__section">
         <div className="cta__graphics__top">

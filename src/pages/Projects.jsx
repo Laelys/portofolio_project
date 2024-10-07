@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <>
       <Navbar />
-      <ProjectsComponent />
+      <ProjectsComponent variant="projectsPage" />
       <Footer />
     </>
   );
