@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("/src/assets/fonts/Raleway-VariableFont_wght.ttf");
+}
+
 .posts__container {
-  background-color: rgb(184, 97, 97);
+  font-family: "Raleway";
+  background-color: #fffced;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
@@ -42,6 +48,7 @@
 }
 
 .posts__button {
+  font-family: "Raleway";
   background-color: white;
   color: black;
   border: none;
@@ -49,6 +56,7 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .posts__button:hover {
@@ -76,16 +84,19 @@
 }
 
 .post__card__title {
+  font-family: "Raleway";
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .post__card__description {
+  font-family: "Raleway";
   font-size: 16px;
   margin-bottom: 20px;
 }
 
 .post__card__button {
+  font-family: "Raleway";
   background-color: #333;
   color: white;
   padding: 10px 20px;
@@ -93,6 +104,7 @@
   cursor: pointer;
   font-size: 16px;
   align-self: flex-start;
+  border-radius: 5px;
 }
 
 .post__card__button:hover {
@@ -100,6 +112,7 @@
 }
 
 .small__post__card {
+  font-family: "Raleway";
   width: 270px;
   height: 436px;
   display: flex;
@@ -132,11 +145,13 @@
 }
 
 .small__post__content h2 {
+  font-family: "Raleway";
   font-size: 18px;
   margin: 0;
 }
 
 .small__post__button {
+  font-family: "Raleway";
   background-color: #333;
   color: white;
   padding: 8px 16px;
@@ -144,6 +159,9 @@
   cursor: pointer;
   font-size: 14px;
   margin-top: 10px;
+  width: 50%;
+  align-self: center;
+  border-radius: 5px;
 }
 
 .small__post__button:hover {
@@ -151,7 +169,8 @@
 }
 
 .posts__grid__container {
-  background-color: rgb(117, 185, 162);
+  font-family: "Raleway";
+  background-color: #fffced;
   height: 1910px;
   display: flex;
   flex-direction: column;
