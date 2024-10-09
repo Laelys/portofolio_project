@@ -292,3 +292,57 @@
   height: 80px;
   background-color: #bc6f2b;
 }
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal__content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal__image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.modal__close {
+  background-color: #193d61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.modal__close:hover {
+  background-color: #3283d3;
+}
+
+.projectsPage__variant .project__card__image,
+.projectsPage__variant .project__card__horizontal__image {
+  transition: transform 0.5s ease;
+}
+
+.projectsPage__variant .project__card__image:hover,
+.projectsPage__variant .project__card__horizontal__image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

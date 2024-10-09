@@ -2,18 +2,26 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ProjectCard from "./subcomponents/ProjectCard";
 import ProjectCardHorizontal from "./subcomponents/ProjectCardHorizontal";
-import "../styling/projects.css"; // Assuming both styles will be in this file
+import "../styling/projects.css";
 
 const ProjectsComponent = ({ variant = "home" }) => {
   const [projectsData, setProjectsData] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    // Fetch the data from the JSON file in the public folder
     fetch("/projectsData.json")
       .then((response) => response.json())
       .then((data) => setProjectsData(data))
       .catch((error) => console.error("Error fetching project data:", error));
   }, []);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <div
@@ -37,7 +45,6 @@ const ProjectsComponent = ({ variant = "home" }) => {
         precision and innovation.
       </p>
 
-      {/* Render the first set of project cards */}
       <div className="projects__row">
         {projectsData.slice(0, 3).map((project, index) => (
           <ProjectCard
@@ -45,20 +52,22 @@ const ProjectsComponent = ({ variant = "home" }) => {
             imageSrc={project.imageSrc}
             title={project.title}
             description={project.description}
+            onClick={() => openModal(project)}
+            variant={variant} // Pass variant prop
           />
         ))}
       </div>
 
-      {/* Render the first horizontal project card */}
       {projectsData[6] && (
         <ProjectCardHorizontal
           imageSrc={projectsData[6].imageSrc}
           title={projectsData[6].title}
           description={projectsData[6].description}
+          onClick={() => openModal(projectsData[6])}
+          variant={variant} // Pass variant prop
         />
       )}
 
-      {/* Render the second set of project cards */}
       <div className="projects__row">
         {projectsData.slice(3, 6).map((project, index) => (
           <ProjectCard
@@ -66,16 +75,19 @@ const ProjectsComponent = ({ variant = "home" }) => {
             imageSrc={project.imageSrc}
             title={project.title}
             description={project.description}
+            onClick={() => openModal(project)}
+            variant={variant} // Pass variant prop
           />
         ))}
       </div>
 
-      {/* Render the second horizontal project card */}
       {projectsData[7] && (
         <ProjectCardHorizontal
           imageSrc={projectsData[7].imageSrc}
           title={projectsData[7].title}
           description={projectsData[7].description}
+          onClick={() => openModal(projectsData[7])}
+          variant={variant} // Pass variant prop
         />
       )}
 
@@ -85,7 +97,6 @@ const ProjectsComponent = ({ variant = "home" }) => {
         <div className="projects__rectangle__third__bottom"></div>
       </div>
 
-      {/* Conditional Rendering of the New Graphics for the Projects Page */}
       {variant === "projectsPage" && (
         <div className="projects__graphics__bottom2">
           <div className="projects__bottom2__rectangle__first"></div>
@@ -93,12 +104,30 @@ const ProjectsComponent = ({ variant = "home" }) => {
           <div className="projects__bottom2__rectangle__third"></div>
         </div>
       )}
+
+      {/* Modal for displaying high-resolution image and description */}
+      {selectedProject && (
+        <div className="modal__overlay" onClick={closeModal}>
+          <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedProject.highResImage || selectedProject.imageSrc}
+              alt={selectedProject.title}
+              className="modal__image"
+            />
+            <h2>{selectedProject.title}</h2>
+            <p>{selectedProject.detailedDescription}</p>
+            <button onClick={closeModal} className="modal__close">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ProjectsComponent;
-
 ProjectsComponent.propTypes = {
-  variant: PropTypes.oneOf(["home", "projectsPage"]), // Define prop type for variant
+  variant: PropTypes.oneOf(["home", "projectsPage"]),
 };
+
+export default ProjectsComponent;
