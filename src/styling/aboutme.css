@@ -143,6 +143,9 @@
 
 .aboutPage__variant .aboutMe__button {
   align-self: flex-start;
+  padding: 8px 21px;
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 20px;
   margin-top: 0;
 }
