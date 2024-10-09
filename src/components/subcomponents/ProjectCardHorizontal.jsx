@@ -1,19 +1,14 @@
 import PropTypes from "prop-types";
 
-const ProjectCardHorizontal = ({
-  imageSrc,
-  title,
-  description,
-  onClick,
-  variant = "home",
-}) => {
+const ProjectCardHorizontal = ({ imageSrc, title, description, onClick }) => {
   return (
     <div className="project__card__horizontal">
       <img
         src={imageSrc}
         alt={title}
         className="project__card__horizontal__image"
-        onClick={variant === "projectsPage" ? onClick : undefined}
+        loading="lazy"
+        onClick={onClick}
       />
       <div className="project__card__horizontal__content">
         <h3 className="project__card__horizontal__title">{title}</h3>
@@ -28,7 +23,6 @@ ProjectCardHorizontal.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["home", "projectsPage"]),
 };
 
 export default ProjectCardHorizontal;

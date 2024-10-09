@@ -16,7 +16,10 @@ const ProjectsComponent = ({ variant = "home" }) => {
   }, []);
 
   const openModal = (project) => {
-    setSelectedProject(project);
+    // Only open the modal if the variant is "projectsPage"
+    if (variant === "projectsPage") {
+      setSelectedProject(project);
+    }
   };
 
   const closeModal = () => {
@@ -105,18 +108,21 @@ const ProjectsComponent = ({ variant = "home" }) => {
         </div>
       )}
 
-      {/* Modal for displaying high-resolution image and description */}
+      {/* Modal for displaying high-resolution image and detailed description */}
       {selectedProject && (
-        <div className="modal__overlay" onClick={closeModal}>
-          <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+        <div className="projectsModal__overlay" onClick={closeModal}>
+          <div
+            className="projectsModal__content"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
-              src={selectedProject.highResImage || selectedProject.imageSrc}
+              src={selectedProject.imageSrcHigh || selectedProject.imageSrc}
               alt={selectedProject.title}
-              className="modal__image"
+              className="projectsModal__image"
             />
             <h2>{selectedProject.title}</h2>
-            <p>{selectedProject.detailedDescription}</p>
-            <button onClick={closeModal} className="modal__close">
+            <p>{selectedProject.descriptionModal}</p>
+            <button onClick={closeModal} className="projectsModal__close">
               Close
             </button>
           </div>
