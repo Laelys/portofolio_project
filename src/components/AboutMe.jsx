@@ -17,23 +17,58 @@ const AboutMe = ({ variant = "home" }) => {
       </div>
 
       <div className="aboutMe__content">
-        <h2>Why me?</h2>
-        <p>
-          I believe in delivering practical yet aesthetically pleasing designs
-          that resonate with clients needs and aspirations.
-        </p>
-        <p>
-          I approach each project with attention to detail and a commitment to
-          meeting client expectations.
-        </p>
-        <p>
-          Collaboration is key, whether working with clients, architects, or
-          fellow designers, to ensure successful outcomes that align with
-          project objectives.
-        </p>
-        <Link to="/about" className="aboutMe__button">
-          Learn more
-        </Link>
+        {variant === "aboutPage" ? (
+          <>
+            <h3>Who am I?</h3>
+            <h1>Ioana Sohan-Gheorghian</h1>
+            <p>
+              I am a skilled interior designer with a strong educational
+              foundation, having completed the interior design program at the
+              University of Architecture and Urbanism &quot;Ion Mincu&quot;
+            </p>
+            <p>
+              With 6 years of experience, I have built a diverse portofolio by
+              collaborating with various designers on a range of projects. My
+              expertise is backed by proficiency in industry-standard tools such
+              as 3DS Max and AutoCAD, enabling me to bring creative visions to
+              life with precision and passion.
+            </p>
+            <Link to="/projects" className="aboutMe__button">
+              Projects
+            </Link>
+            <p>
+              I believe in delivering practical yet aesthetically pleasing
+              designs that resonate with clients needs and aspirations. I
+              approach each project with attention to detail and a commitment to
+              meeting client expectations.
+            </p>
+            <p>
+              Collaboration is key, whether working with clients, architects or
+              fellow designers to ensure successful outcomes that align with
+              project objectives.
+            </p>
+          </>
+        ) : (
+          <>
+            <h2>Why me?</h2>
+            <p>
+              I believe in delivering practical yet aesthetically pleasing
+              designs that resonate with clients needs and aspirations.
+            </p>
+            <p>
+              I approach each project with attention to detail and a commitment
+              to meeting client expectations.
+            </p>
+            <p>
+              Collaboration is key, whether working with clients, architects, or
+              fellow designers, to ensure successful outcomes that align with
+              project objectives.
+            </p>
+            <Link to="/about" className="aboutMe__button">
+              Learn more
+            </Link>
+          </>
+        )}
       </div>
 
       <div className="about__graphics">

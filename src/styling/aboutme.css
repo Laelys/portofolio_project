@@ -114,6 +114,39 @@
   background-color: #bc6f2b;
 }
 
+/* Variant (About Page) Content Alignment */
+.aboutPage__variant .aboutMe__content {
+  align-items: flex-start;
+  padding: 0 70px 40px 0;
+}
+
+.aboutPage__variant h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.aboutPage__variant h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.aboutPage__variant p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.aboutPage__variant .aboutMe__button {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
 /* Variant (About Page) Bottom Graphics */
 .aboutPage__variant .about__bottom__graphics {
   position: absolute;
@@ -140,13 +173,52 @@
 .aboutPage__variant .about__bottom__rectangle__second {
   right: 140px;
   width: 55px;
-  height: 104px;
+  height: 74px;
   background-color: #193d61;
 }
 
 .aboutPage__variant .about__bottom__rectangle__third {
   right: 214px;
   width: 181px;
-  height: 80px;
+  height: 60px;
+  background-color: #bc6f2b;
+}
+
+.aboutPage__variant .about__graphics {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.aboutPage__variant .about__rectangle__first,
+.aboutPage__variant .about__rectangle__second,
+.aboutPage__variant .about__rectangle__third {
+  position: absolute;
+  bottom: 0;
+  box-shadow: 4px 0px 12px 0px #00000040;
+}
+
+.aboutPage__variant .about__rectangle__first {
+  left: 151px;
+  width: 55px;
+  height: 517px;
+  margin-bottom: 40px;
+  background-color: #d7c2ad;
+  z-index: 1;
+}
+
+.aboutPage__variant .about__rectangle__second {
+  left: 216px;
+  width: 297px;
+  height: 100%;
+  background-color: #193d61;
+}
+
+.aboutPage__variant .about__rectangle__third {
+  left: 523px;
+  width: 55px;
+  height: 517px;
+  margin-bottom: 40px;
   background-color: #bc6f2b;
 }
