@@ -3,9 +3,10 @@ import "../styling/navbar.css";
 
 const Navbar = () => {
   const handleEmailClick = () => {
-    const email = "laelyseop@gmail.com";
-    const subject = "Hello There!";
-    const body = "I hope this message finds you well.";
+    const email = "ioanagheorghian@gmail.com";
+    const subject = "Inquiry regarding your services";
+    const body =
+      "I hope this message finds you well. I came across your website and I was impressed by your work. I'm reaching out because I have questions about your services";
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
