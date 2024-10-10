@@ -7,7 +7,6 @@ import "../styling/projects.css";
 const ProjectsComponent = ({ variant = "home" }) => {
   const [projectsData, setProjectsData] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch("/projectsData.json")
@@ -27,11 +26,9 @@ const ProjectsComponent = ({ variant = "home" }) => {
 
   const openModal = async (project) => {
     if (variant === "projectsPage") {
-      setLoading(true);
       const preloadedSrc = await preloadImage(
         project.imageSrcHigh || project.imageSrc
       );
-      setLoading(false);
 
       // Only open the modal if the image is preloaded
       if (preloadedSrc) {
@@ -125,9 +122,6 @@ const ProjectsComponent = ({ variant = "home" }) => {
           <div className="projects__bottom2__rectangle__third"></div>
         </div>
       )}
-
-      {/* Show a loading indicator while the image is being preloaded */}
-      {loading && <div className="modal__loading">Loading...</div>}
 
       {/* Modal for displaying high-resolution image and detailed description */}
       {selectedProject && (
