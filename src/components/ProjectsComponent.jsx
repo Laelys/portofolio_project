@@ -7,6 +7,7 @@ import "../styling/projects.css";
 const ProjectsComponent = ({ variant = "home" }) => {
   const [projectsData, setProjectsData] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch("/projectsData.json")
@@ -15,10 +16,27 @@ const ProjectsComponent = ({ variant = "home" }) => {
       .catch((error) => console.error("Error fetching project data:", error));
   }, []);
 
-  const openModal = (project) => {
-    // Only open the modal if the variant is "projectsPage"
+  const preloadImage = (src) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve(img.src);
+      img.onerror = () => resolve(null); // Resolve even if there's an error to avoid blocking
+    });
+  };
+
+  const openModal = async (project) => {
     if (variant === "projectsPage") {
-      setSelectedProject(project);
+      setLoading(true);
+      const preloadedSrc = await preloadImage(
+        project.imageSrcHigh || project.imageSrc
+      );
+      setLoading(false);
+
+      // Only open the modal if the image is preloaded
+      if (preloadedSrc) {
+        setSelectedProject({ ...project, preloadedSrc });
+      }
     }
   };
 
@@ -56,7 +74,7 @@ const ProjectsComponent = ({ variant = "home" }) => {
             title={project.title}
             description={project.description}
             onClick={() => openModal(project)}
-            variant={variant} // Pass variant prop
+            variant={variant}
           />
         ))}
       </div>
@@ -67,7 +85,7 @@ const ProjectsComponent = ({ variant = "home" }) => {
           title={projectsData[6].title}
           description={projectsData[6].description}
           onClick={() => openModal(projectsData[6])}
-          variant={variant} // Pass variant prop
+          variant={variant}
         />
       )}
 
@@ -79,7 +97,7 @@ const ProjectsComponent = ({ variant = "home" }) => {
             title={project.title}
             description={project.description}
             onClick={() => openModal(project)}
-            variant={variant} // Pass variant prop
+            variant={variant}
           />
         ))}
       </div>
@@ -90,7 +108,7 @@ const ProjectsComponent = ({ variant = "home" }) => {
           title={projectsData[7].title}
           description={projectsData[7].description}
           onClick={() => openModal(projectsData[7])}
-          variant={variant} // Pass variant prop
+          variant={variant}
         />
       )}
 
@@ -108,6 +126,9 @@ const ProjectsComponent = ({ variant = "home" }) => {
         </div>
       )}
 
+      {/* Show a loading indicator while the image is being preloaded */}
+      {loading && <div className="modal__loading">Loading...</div>}
+
       {/* Modal for displaying high-resolution image and detailed description */}
       {selectedProject && (
         <div className="projectsModal__overlay" onClick={closeModal}>
@@ -116,7 +137,7 @@ const ProjectsComponent = ({ variant = "home" }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={selectedProject.imageSrcHigh || selectedProject.imageSrc}
+              src={selectedProject.preloadedSrc}
               alt={selectedProject.title}
               className="projectsModal__image"
             />
